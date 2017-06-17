@@ -4,7 +4,7 @@ var platform = require('platform');
 var getIP = require('ipware')().get_ip;
 
 var app = express();
-
+var port = process.env.PORT || 8080;
 app.use(express.static(__dirname + '/public'));
 
 
@@ -21,6 +21,6 @@ app.get('/', function(req, res, next) {
 
 })
 
-app.listen(3000, function() {
+app.listen(port, function() {
   console.log('app listening on port 3000')
 })
