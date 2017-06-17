@@ -15,7 +15,7 @@ app.set('view engine', '.hbs');
 app.get('/', function(req, res, next) {
   var ip = getIP(req);
   var ua = platform.parse(req.headers['user-agent'])
-  res.render('index', {ip: 'Your IP address is '+ip.clientIp, language: 'The language your currently using on your computer is '+ req.headers['accept-language'], OS: 'your currently on the following browser and operating system '+ua.description})
+  res.render('index', {ip: 'Your IP address is '+ip.clientIp, language: 'The language your currently using on your computer is '+ req.headers['accept-language'].substring(0, 5), OS: 'your currently on the following browser and operating system '+ua.description})
 
 
 
